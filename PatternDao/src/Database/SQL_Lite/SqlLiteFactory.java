@@ -25,26 +25,7 @@ public class SqlLiteFactory extends DaoFactory {
 			// create a database connection
 			connection = DriverManager.getConnection(ConnectionString);
 			
-			Statement statement = connection.createStatement();
-			System.out.print("\nstatment ok");
-			statement.setQueryTimeout(30);
-			ResultSet resultSet = statement.executeQuery("select * from Ticket");
 
-			System.out.print("\nresuslt set ok");
-			
-			while(resultSet.next())
-			{
-				System.out.println("Fetching...");
-				
-				Ticket obj = new Ticket();
-
-				obj.setDescription(resultSet.getString("Description"));
-				obj.setId(resultSet.getInt("id"));
-				obj.setDate(resultSet.getInt("Data"));
-
-				System.out.println(obj.toString());
-				
-			}
 			
 			
 		}
