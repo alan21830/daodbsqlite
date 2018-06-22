@@ -1,5 +1,7 @@
 package Model.Ticket;
 
+import java.text.MessageFormat;
+
 public class Ticket {
 	private int id;
 	private String Description;
@@ -9,7 +11,7 @@ public class Ticket {
 	
 	public String toString() {
 		
-		return String.format("ID TICKET {0}, \nDESCRIZIONE {1}\nDATE {2}", this.id, this.Description, this.date);
+		return MessageFormat.format("ID Ticket: {0}\n Description: {1}\n Date {2}", this.id, this.Description, this.date);
 		
 	}
 	public int getId() {

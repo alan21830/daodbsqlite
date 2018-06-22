@@ -1,15 +1,13 @@
 package View;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import Database.SQL_Lite.SqlLiteTicket;
+import Database.TicketDAO;
+import Database.Factory.DAOAbstractFactory;
+import Database.Factory.DAOFactory;
 import Model.Ticket.Ticket;
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -20,6 +18,10 @@ import javax.swing.JScrollBar;
 
 public class viewDb extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -55,24 +57,28 @@ public class viewDb extends JFrame {
 		contentPane.add(textArea);
 		JButton btnView = new JButton("View");
 
-		
-		
-		
+
+
+
 		btnView.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				
-				
-				SqlLiteTicket sqliteticket = new SqlLiteTicket();
 
-				List<Ticket> list = sqliteticket.GetAll();
+				DAOFactory myDAOFactory = DAOAbstractFactory.getDAOFactory(DAOAbstractFactory.SQLITE);
+				TicketDAO myTicketDAO = myDAOFactory.getTicketDAO();
+
+
+
+				List<Ticket> list = myTicketDAO.GetAll();
 
 				if(list.isEmpty())
 					textArea.setText("vuota");
-				
-				for (Ticket obj : list)
-				{textArea.setText(obj.toString());}
+
+				for (Ticket obj : list) {
+					
+					textArea.setText(textArea.getText() + "\n" + obj.toString());
+					
+					
+				}
 
 
 
@@ -92,7 +98,7 @@ public class viewDb extends JFrame {
 		JScrollBar scrollBar = new JScrollBar();
 		scrollBar.setBounds(63, 81, 15, 96);
 		contentPane.add(scrollBar);
-		
-		
+
+
 	}
 }
