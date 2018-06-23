@@ -4,9 +4,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import Database.TicketDAO;
+
+import Database.DAOFactory;
+import Database.DatabaseTicket;
 import Database.Factory.DAOAbstractFactory;
-import Database.Factory.DAOFactory;
 import Model.Ticket.Ticket;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -53,7 +54,7 @@ public class viewDb extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(57, 72, 311, 186);
+		textArea.setBounds(57, 72, 500, 500);
 		contentPane.add(textArea);
 		JButton btnView = new JButton("View");
 
@@ -63,42 +64,44 @@ public class viewDb extends JFrame {
 		btnView.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				DAOFactory myDAOFactory = DAOAbstractFactory.getDAOFactory(DAOAbstractFactory.SQLITE);
-				TicketDAO myTicketDAO = myDAOFactory.getTicketDAO();
+				
+				/* Esempio con JDBC SQLite... */
+				
+				DAOFactory myDAOFactorySQLite = DAOAbstractFactory.getDAOFactory(DAOAbstractFactory.SQLITE);
+				DatabaseTicket myTicketDAOSQLite = myDAOFactorySQLite.getTicketDAO();
 
+				List<Ticket> list1 = myTicketDAOSQLite.GetAll();
 
+				textArea.setText(textArea.getText() + "FROM JDBC SQLite\n\n");
+				if(list1.isEmpty())
+					textArea.setText(textArea.getText() + "vuota");
 
-				List<Ticket> list = myTicketDAO.GetAll();
+				for (Ticket obj : list1) 				
+					textArea.setText(textArea.getText() + "\n" + obj.toString());								
+				
+				/* Esempio con HIBERNATE... */
 
-				if(list.isEmpty())
+				DAOFactory myDAOFactoryHibernate = DAOAbstractFactory.getDAOFactory(DAOAbstractFactory.SQLITE);
+				DatabaseTicket myTicketDAOHibernate = myDAOFactoryHibernate.getTicketDAO();
+
+				List<Ticket> list2 = myTicketDAOHibernate.GetAll();
+
+				textArea.setText(textArea.getText() + "\n\nFROM HIBERNATE\n\n");
+				if(list2.isEmpty())
 					textArea.setText("vuota");
 
-				for (Ticket obj : list) {
-					
-					textArea.setText(textArea.getText() + "\n" + obj.toString());
-					
-					
-				}
-
-
-
+				for (Ticket obj : list2) 				
+					textArea.setText(textArea.getText() + "\n" + obj.toString());	
 
 
 			}
 		});
+		
+		
 		btnView.setBounds(35, 31, 117, 29);
 		contentPane.add(btnView);
 
-		JList list = new JList();
-		list.setBounds(77, 123, 1, 1);
-		contentPane.add(list);
-
-
-
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(63, 81, 15, 96);
-		contentPane.add(scrollBar);
-
+		
 
 	}
 }

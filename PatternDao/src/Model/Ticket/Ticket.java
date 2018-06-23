@@ -11,7 +11,7 @@ public class Ticket {
 	
 	public String toString() {
 		
-		return MessageFormat.format("ID Ticket: {0}\n Description: {1}\n Date {2}", this.id, this.Description, this.date);
+		return MessageFormat.format("\nID Ticket: {0}\n Description: {1}\n Date {2}", this.id, this.Description, this.date);
 		
 	}
 	public int getId() {

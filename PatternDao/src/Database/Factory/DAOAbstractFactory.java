@@ -2,10 +2,12 @@ package Database.Factory;
 
 import java.text.MessageFormat;
 
-public class DAOAbstractFactory {
+import Database.DAOFactory;
 
-	
+public abstract class DAOAbstractFactory {
+
 	public static final String SQLITE = "SQLite";
+	public static final String HIBERNATE = "Hibernate";
 
     /**
      * This function is used to get a concrete DAO factory.
@@ -16,7 +18,7 @@ public class DAOAbstractFactory {
     public static DAOFactory getDAOFactory(String arg0) {
 
         // Building concrete factory's name...
-        String nameDAOFactory = MessageFormat.format("{0}.{1}DAOFactory", DAOFactory.class.getPackage().getName(), arg0);
+        String nameDAOFactory = MessageFormat.format("{0}.DAOFactory{1}", DAOAbstractFactory.class.getPackage().getName(), arg0);
 
         // Building a new concrete factory's instance...
         try {
@@ -26,5 +28,4 @@ public class DAOAbstractFactory {
             return null;
         }        
     }
-	
 }

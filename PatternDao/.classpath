@@ -11,5 +11,60 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/hamcrest-core-1.3.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/hibernate-core-5.1.12.Final.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/hibernate-jpa-2.1-api-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/antlr-2.7.7.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/classmate-1.3.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/dom4j-1.6.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/geronimo-jta_1.1_spec-1.1.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/jandex-2.0.3.Final.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/javassist-3.20.0-GA.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/jboss-logging-3.3.0.Final.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Andrea Graziani/Documents/GitHub/daodbsqlite/PatternDao/Libraries/junit-4.12.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
